@@ -1,4 +1,4 @@
-# JUBO Widget Wrapper
+# JuBo Widget Wrapper
 
 An experiment in bridging the gap between Jupyter Notebooks using `ipywidgets` and a Bokeh server application. 
 The idea is to test if this might be a good way of sharing prototype apps built in the notebook.
