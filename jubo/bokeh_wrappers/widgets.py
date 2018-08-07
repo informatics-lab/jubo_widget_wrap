@@ -39,8 +39,7 @@ class JuboIntSlider(BokehSlider, JuboWidgetMixIn):
             kwargs["title"] = kwargs["description"]
             del kwargs["description"]
 
-        return super().__init__(start=min, end=max, value=value, step=step,
-                                title="Amplitude", **kwargs)
+        return super().__init__(start=min, end=max, value=value, step=step, **kwargs)
 
     def add_interact(self, callback):
         self.on_change('value', lambda __1, __2, __3: callback())

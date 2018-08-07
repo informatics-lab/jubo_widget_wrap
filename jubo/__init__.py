@@ -7,7 +7,7 @@ except NameError:
 
 
 if IS_BOKEH:
-    from .bokeh_wrappers import interact, append
+    from .bokeh_wrappers import interact, append, cell, current_output_element, display_patched
 else:
     # Assume note book
     from ipywidgets import interact

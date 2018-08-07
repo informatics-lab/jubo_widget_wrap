@@ -5,7 +5,7 @@ The idea is to test if this might be a good way of sharing prototype apps built 
 
 In this experiment the `jubo` module implements methods/classes from `ipywidgets`. If used in a notebook context
 these will simply be the `ipywidgets` objects, in a Bokeh context they will be Bokeh objects wrapped to implement (a very limited set of) the
-`ipywidgets` interface.
+`ipywidgets` interface. Additionally there is some patching of `IPython` to capture output to be displayed and render it in Bokeh.
 
 ## Requirements
 
@@ -25,8 +25,14 @@ Start Jupyter Lab with `jubo` on the `PYTHONPATH`:
 
 `PYTHONPATH=../:$PYHTONPATH jupyter lab --notebook-dir=notebooks`
 
-View and run `simple-interactive.ipynb`
+View and run `simple-interactive.ipynb` or `images.ipynb`
 
 convert to python
 
-`jupyter nbconvert --to python notebooks/simple-interactive.ipynb --output-dir=bokeh_apps
+`jubo/convert.py notebooks/images.ipynb bokeh_apps/images.py` or 
+`jubo/convert.py  notebooks/simple-interactive.ipynb bokeh_apps/simple-interactive.py`
+
+serve
+
+`bokeh serve bokeh_apps/simple-interactive.py --show` or
+`bokeh serve bokeh_apps/images.py --show`
